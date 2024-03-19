@@ -20,6 +20,9 @@ function Navbar() {
           <li>
             <Link to="./blogs">Blogs</Link>
           </li>
+          <li>
+            <Link to="./fetch-api">Fetch API</Link>
+          </li>
         </ul>
       </div>
     </div>

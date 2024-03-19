@@ -10,6 +10,7 @@ import NoPage from "./pages/NoPage";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BlogDetails from "./pages/BlogDetails";
+import FetchApi from "./pages/FetchApi";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/fetch-api" element={<FetchApi />} />
         <Route path="/blog/:id/:blogTitle" element={<BlogDetails />} />
         <Route path="/*" element={<NoPage />} />
       </Routes>
