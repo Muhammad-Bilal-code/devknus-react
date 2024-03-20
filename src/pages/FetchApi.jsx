@@ -24,17 +24,19 @@ const FetchApi = () => {
   console.log("PRODUCTS", products);
   return (
     <div className="flex flex-wrap">
-      {loading
-        ? products.map((val, index) => (
-            <ProductCard
-              id={val.id}
-              description={val.description}
-              image={val.image}
-              price={val.price}
-              title={val.title}
-            />
-          ))
-        : "Loading"}
+      {loading ? (
+        products.map((val, index) => (
+          <ProductCard
+            id={val.id}
+            description={val.description}
+            image={val.image}
+            price={val.price}
+            title={val.title}
+          />
+        ))
+      ) : (
+        <h2 className="text-5xl">Loading</h2>
+      )}
     </div>
   );
 };

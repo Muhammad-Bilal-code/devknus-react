@@ -11,19 +11,42 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BlogDetails from "./pages/BlogDetails";
 import FetchApi from "./pages/FetchApi";
+import Axios from "./pages/Axios";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const [user, setUser] = useState(false);
+  const handleLogin = () => {
+    console.log("login");
+    setUser(true);
+    console.log(user);
+  };
+  const handleLogOut = () => {
+    console.log("logout");
+    setUser(false);
+    console.log(user);
+  };
   return (
     <>
-      <Navbar />
+      <Navbar user={user} login={handleLogin} logout={handleLogOut} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/fetch-api" element={<FetchApi />} />
+        <Route path="/axios" element={<Axios />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute user={user}>
+              <Dashboard user={user} />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/blog/:id/:blogTitle" element={<BlogDetails />} />
         <Route path="/*" element={<NoPage />} />
       </Routes>
