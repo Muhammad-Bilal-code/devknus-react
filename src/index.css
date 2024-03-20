@@ -6,7 +6,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+#file-upload {
+  display: none;
+}
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+}
 .main {
   display: flex;
   justify-content: space-between;

@@ -14,6 +14,7 @@ import FetchApi from "./pages/FetchApi";
 import Axios from "./pages/Axios";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import UploadFile from "./pages/UploadFile";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,6 +39,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/fetch-api" element={<FetchApi />} />
+        <Route path="/upload-file" element={<UploadFile />} />
         <Route path="/axios" element={<Axios />} />
         <Route
           path="/dashboard"

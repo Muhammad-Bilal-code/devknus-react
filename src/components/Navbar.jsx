@@ -29,6 +29,9 @@ function Navbar({ login, logout, user }) {
             <Link to="./axios">Axios</Link>
           </li>
           <li>
+            <Link to="./upload-file">Upload File</Link>
+          </li>
+          <li>
             <Link to="./dashboard">Dashboard</Link>
           </li>
 
